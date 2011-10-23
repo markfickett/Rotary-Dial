@@ -14,22 +14,16 @@ void RotaryDialer::setup() {
 	pinMode(pinPulse, INPUT);
 	digitalWrite(pinReady, HIGH);
 	digitalWrite(pinPulse, HIGH);
-
-	Serial.println("waiting for first dial");
 }
 
 void RotaryDialer::completeDial() {
 	state = WAITING;
-	Serial.println("dial complete");
 	if (number >= 0 && number <= 10) {
 		if (number == 10) {
 			number = 0;
 		}
-		Serial.print("got good number ");
-		Serial.println(number);
 		hasCompletedNumber = true;
 	}
-	Serial.println("waiting for next dial");
 }
 
 bool RotaryDialer::update() {
@@ -39,7 +33,6 @@ bool RotaryDialer::update() {
 	switch(state) {
 		case WAITING:
 			if (readyStatus == LOW) {
-				Serial.println("listening for pulses");
 				hasCompletedNumber = false;
 				number = 0;
 				state = LISTENING_NOPULSE;
@@ -49,7 +42,6 @@ bool RotaryDialer::update() {
 			if (readyStatus == HIGH) {
 				completeDial();
 			} else if (pulseStatus == HIGH) {
-				Serial.println("into pulse");
 				state = LISTENING_PULSE;
 			}
 			break;
@@ -57,9 +49,7 @@ bool RotaryDialer::update() {
 			if (readyStatus == HIGH) {
 				completeDial();
 			} else if (pulseStatus == LOW) {
-				Serial.print("out of pulse, number=");
 				number++;
-				Serial.println(number);
 				state = LISTENING_NOPULSE;
 			}
 			break;
