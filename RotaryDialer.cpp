@@ -3,6 +3,9 @@
 #include "WProgram.h"
 
 #define NO_NUMBER	-1
+
+// Require DEBOUNCE_DELAY milliseconds between state changes. This value is
+// noted in the class documentation.
 #define DEBOUNCE_DELAY	15
 
 RotaryDialer::RotaryDialer(int readyPin, int pulsePin) :
