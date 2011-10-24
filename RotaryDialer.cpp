@@ -37,7 +37,7 @@ void RotaryDialer::completeDial() {
 	if (!changeStateIfDebounced(WAITING)) {
 		return;
 	}
-	if (number >= 0 && number <= 10) {
+	if (number > 0 && number <= 10) {
 		if (number == 10) {
 			number = 0;
 		}
