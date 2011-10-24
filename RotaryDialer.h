@@ -32,6 +32,11 @@
  *
  * There is 15ms allowed for debounce, which is the implementation's only
  * constraint on pulse speed.
+ *
+ * See also, USB output from the Arduino:
+ *	http://www.arduino.cc/playground/Main/InterfacingWithHardware#USB
+ * including presenting the Arduino as a keyboard by installing new firmware:
+ *	http://hunt.net.nz/users/darran/?tag=keyboard
  */
 class RotaryDialer {
 	private:
