@@ -43,7 +43,9 @@ class RotaryDialer {
 			LISTENING_PULSE
 		};
 		enum State state;
+		unsigned long lastStateChangeMillis;
 
+		bool changeStateIfDebounced(enum State newState);
 		void completeDial();
 	public:
 		RotaryDialer(int readyPin, int pulsePin);
