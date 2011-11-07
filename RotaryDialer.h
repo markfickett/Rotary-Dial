@@ -6,6 +6,9 @@
  * North American system, where [1, 9] pulses correspond to the numbers [1, 9],
  * and 0 is represented by 10 pulses.
  *
+ * This library was written for use with the dial demonstrated here:
+ *http://commons.wikimedia.org/wiki/File:Rotary_Dial,_Dialing_Back_with_LEDs.ogv
+ *
  * On the back of the dial are two connections relevant for this implementation.
  * One (the 'ready' switch) is normally open (NO), and is closed whenever the
  * rotor is not at rest (specifically, as soon as the user draws back the rotor,
