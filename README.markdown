@@ -1,11 +1,11 @@
 Rotary Dial
 ===========
 
-Arduino library to read numbers from a rotary dial (or otherwise using pulse dialing; see [Wikipedia: Rotary dial](http://en.wikipedia.org/wiki/Rotary_dial).
+Arduino library to read numbers from a rotary dial (or otherwise using pulse dialing; see [Wikipedia: Rotary dial](http://en.wikipedia.org/wiki/Rotary_dial)).
 
 ![front of a rotary telephone dial](http://www.markfickett.com/umbrella/images/111105rotarydialfront-sm.jpg "Rotary Dial")
 
-This implementation is for the North American system, where [1, 9] pulses correspond to the numbers [1, 9], and 0 is represented by 10 pulses. This library was written for use with the dial [demonstrated here](http://commons.wikimedia.org/wiki/File:Rotary_Dial,_Dialing_Back_with_LEDs.ogv).
+This implementation is for the North American system, where [1, 9] pulses correspond to the numbers [1, 9], and 0 is represented by 10 pulses. This library was written for use with the dial [demonstrated here](http://commons.wikimedia.org/wiki/File:Rotary_Dial,_Dialing_Back_with_LEDs.ogv) and pictured above.
 
 Connection & Circuit
 --------------------
@@ -23,14 +23,14 @@ The expected circuit is:
 
 The expected sequence is:
 
-	readyPin	pulsePin	state
-	HIGH		n/a		default (waiting)
-	LOW		LOW		ready to dial / for first pulse
-	LOW		HIGH		pulse received (number = 1)
-	LOW		LOW		ready for next pulse
-	LOW		HIGH		pulse received (number = 2)
-	LOW		...		(repeat)
-	HIGH		n/a		rotation complete, count recorded
+	readyPin  pulsePin  state
+	HIGH      n/a       default (waiting)
+	LOW       LOW       ready to dial / for first pulse
+	LOW       HIGH      pulse received (number = 1)
+	LOW       LOW       ready for next pulse
+	LOW       HIGH      pulse received (number = 2)
+	LOW       ...       (repeat)
+	HIGH      n/a       rotation complete, count recorded
 
 There is 15ms allowed for debounce, which is the implementation's only
 constraint on pulse speed.
