@@ -1,6 +1,6 @@
 /**
  * Print each digit over Serial as it is dialed.
- * See RotaryDialer.h for detailed documentation.
+ * See the README for detailed documentation.
  */
 
 #include <RotaryDialer.h>
