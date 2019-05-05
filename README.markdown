@@ -38,5 +38,5 @@ constraint on pulse speed.
 See Also
 --------
 
-See also: [USB output from the Arduino](http://www.arduino.cc/playground/Main/InterfacingWithHardware#USB), including [presenting the Arduino as a keyboard by installing new firmware](http://hunt.net.nz/users/darran/?tag=keyboard).
+[Interrupt-based variant](https://github.com/Harvie/RotaryDial) of reading a rotary dial.
 
